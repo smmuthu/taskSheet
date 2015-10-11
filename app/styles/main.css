@@ -62,7 +62,30 @@ body {
 html.login, body.login {
     height: 100%;
 }
-
+ng-atomic-notify {
+  z-index: 9999 !important;
+}
+.atomic-notify .atomic-notify-item {
+    margin: 50px auto 0 !important;
+}
+.atomic-notify .atomic-notify-item .icon {
+    width: 60px !important;
+    display: table-cell !important;
+    padding: 20px !important;
+}
+.atomic-notify .atomic-notify-item .body {
+    display: table !important;
+    padding: 15px 10px!important;
+}
+.cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width:500px;
+  height:350px;
+}
+.preview img {
+    width: 50%;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

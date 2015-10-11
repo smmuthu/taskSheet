@@ -39,6 +39,11 @@ module.exports = function(config) {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/satellizer/satellizer.js',
       'bower_components/angular-smart-table/dist/smart-table.js',
+      'bower_components/angular-atomic-notify/dist/angular-atomic-notify.min.js',
+      'bower_components/sweetalert/dist/sweetalert.min.js',
+      'bower_components/angular-sweetalert/dist/ngSweetAlert.js',
+      'bower_components/angular-sweetalert/dist/ngSweetAlert.min.js',
+      'bower_components/ng-img-crop/compile/minified/ng-img-crop.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

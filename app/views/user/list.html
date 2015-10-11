@@ -5,12 +5,14 @@
         <div class="box-header">
           <h3 class="box-title">Responsive Hover Table</h3>
           <div class="box-tools">
+            <a class="adduser btn btn-sm btn-success pull-right"  ui-sref="main.adduser"><i class="fa fa-user-plus"></i> Add User</a>
             <div class="input-group" style="width: 150px;">
               <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
               <div class="input-group-btn">
                 <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
               </div>
             </div>
+
           </div>
         </div><!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
@@ -29,7 +31,7 @@
                   <td>{{row.lastname | uppercase}}</td>
                   <td><span class="label label-success">{{row.roles[0].display_name}}</span></td>
                   <td>
-                      <a ui-sref="dashboard.useredit({{row.id}})" class="btn btn-default btn-xs">
+                      <a ui-sref="main.userview({ id: row.id })" class="btn btn-default btn-xs">
                         <i class="fa fa-edit"></i> Edit
                       </a>
                   </td>

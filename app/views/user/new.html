@@ -1,0 +1,399 @@
+<section class="content">
+  <div class="row">
+    <div class="col-md-10 col-xs-offset-2">
+      <!-- Horizontal Form -->
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Add New User</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form name="userForm"  class="form-horizontal" ng-submit="submitForm(userForm.$valid);">
+          <div class="box-body">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Firstname:</label>
+              <div class="col-lg-8">
+                <input
+                  name="firstname" 
+                  ng-model="formData.firstname" 
+                  ng-minlength="3" 
+                  ng-maxlength="15"
+                  class="form-control" 
+                  value="" 
+                  placeholder="Firstname" 
+                  type="text" 
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.firstname.$touched">
+                    <p ng-show="userForm.firstname.$error.minlength">Firstname is too short.</p>
+                    <p ng-show="userForm.firstname.$error.maxlength">Firstname is too long.</p>
+                    <p ng-show="userForm.firstname.$error.required">Your Firstname is required.</p>  
+                </div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Lastname:</label>
+              <div class="col-lg-8">
+                <input
+                  name="lastname" 
+                  ng-model="formData.lastname" 
+                  ng-minlength="1" 
+                  ng-maxlength="15"
+                  class="form-control" 
+                  value="" 
+                  placeholder="Lastname" 
+                  type="text" 
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.lastname.$touched">
+                    <p ng-show="userForm.lastname.$error.minlength">Lastname is too short.</p>
+                    <p ng-show="userForm.lastname.$error.maxlength">Lastname is too long.</p>
+                    <p ng-show="userForm.lastname.$error.required">Your Lastname is required.</p>  
+                </div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email:</label>
+              <div class="col-lg-8">
+                <input
+                  name="email" 
+                  ng-model="formData.email" 
+                  data-wc-unique="{key: formData.id, property: 'email'}"
+                  class="form-control" 
+                  value="" 
+                  placeholder="Email" 
+                  type="email" 
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.email.$touched">
+                    <p ng-show="userForm.email.$error.email">Invalid Email address.</p>  
+                    <p ng-show="userForm.email.$error.required">Email is required.</p> 
+                    <p ng-show="userForm.email.$dirty && userForm.email.$error.unique">Email already in use</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Password:</label>
+              <div class="col-lg-8">
+                <input
+                  name="password" 
+                  ng-model="formData.password" 
+                  class="form-control" 
+                  value="" 
+                  ng-minlength="6" 
+                  ng-maxlength="12"
+                  placeholder="Password" 
+                  type="password" 
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.password.$touched"> 
+                    <p ng-show="userForm.password.$error.minlength">Password is too short.</p>
+                    <p ng-show="userForm.password.$error.maxlength">Password is too long.</p>
+                    <p ng-show="userForm.password.$error.required">Password is required.</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Confirm Password:</label>
+              <div class="col-lg-8">
+                <input
+                  name="password_confirm" 
+                  ng-model="formData.password_confirm" 
+                  class="form-control" 
+                  value=""
+                  ng-minlength="6" 
+                  ng-maxlength="12"
+                  placeholder="Confirm Password" 
+                  type="password" 
+                  data-ng-match="formData.password"
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.password_confirm.$touched">
+                    <p ng-show="userForm.password_confirm.$error.required">Confirm Password is required.</p>
+                    <p ng-show="userForm.password_confirm.$error.match">Password and Confirm Password not matched.</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Sex:</label>
+                <div class="col-lg-4">
+                  <select class="form-control" ng-model="formData.sex" ng-options="option.name for option in sex.availableOptions track by option.id"></select>
+
+                </div>
+
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Role:</label>
+                <div class="col-lg-4">
+                  <roles selected-value='formData.role'/></roles>
+                </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Company:</label>
+              <div class="col-lg-8">
+                <input
+                  name="company" 
+                  ng-model="formData.company" 
+                  ng-minlength="3" 
+                  ng-maxlength="50"
+                  class="form-control" 
+                  value="" 
+                  placeholder="Company" 
+                  type="text" 
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.company.$touched">
+                    <p ng-show="userForm.company.$error.minlength">Company is too short.</p>
+                    <p ng-show="userForm.company.$error.maxlength">Company is too long.</p>
+                    <p ng-show="userForm.company.$error.required">Your Company is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Date of Birth:</label>
+              <div class="col-lg-8">
+              <p class="input-group">
+                <!-- <input
+                  name="dob" 
+                  ng-model="formData.dob" 
+                  class="form-control" 
+                  value="" 
+                  datepicker-options="dateOptions"
+                  placeholder="yyyy-MM-dd" 
+                  type="text"
+                  datepicker-popup="yyyy-MM-dd"
+                  datepicker-append-to-body="true"
+                  required
+                  close-text="Close" 
+                > -->
+                <input 
+                  ng-model="formData.dob" 
+                  type="text" 
+                  id="dob" 
+                  name="dob"
+                  class="form-control" 
+                  datepicker-options="dateOptions"
+                  datepicker-popup="yyyy-MM-dd" 
+                  datepicker-append-to-body="true"
+                  is-open="status.opened" 
+                  readonly="readonly" 
+                  ng-click="status.opened=true"
+                  required 
+                >
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="open($event);">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </button>
+                </span>
+              </p>
+                <div class="text-danger" ng-if="userForm.dob.$touched">
+                    <p ng-show="userForm.dob.$error.date">Date of Birth is not valid.</p>
+                    <p ng-show="userForm.dob.$error.required">Date of Birth is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Telephone:</label>
+              <div class="col-lg-8">
+                <input
+                  name="telephone" 
+                  ng-model="formData.telephone" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Telephone" 
+                  type="text" 
+                  ng-minlength='5'
+                  ng-maxlength='15'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.telephone.$touched">
+                    <p ng-show="userForm.telephone.$error.minlength">Telephone is too short.</p>
+                    <p ng-show="userForm.telephone.$error.maxlength">Telephone is too long.</p>
+                    <p ng-show="userForm.telephone.$error.required">Your Telephone is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Mobile:</label>
+              <div class="col-lg-8">
+                <input
+                  name="mobile" 
+                  ng-model="formData.mobile" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Mobile" 
+                  type="text"
+                  ng-minlength='5'
+                  ng-maxlength='15'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.mobile.$touched">
+                    <p ng-show="userForm.mobile.$error.minlength">Mobile is too short.</p>
+                    <p ng-show="userForm.mobile.$error.maxlength">Mobile is too long.</p>
+                    <p ng-show="userForm.mobile.$error.required">Your Mobile is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Address Line one:</label>
+              <div class="col-lg-8">
+                <input
+                  name="street_1" 
+                  ng-model="formData.street_1" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Address Line 1" 
+                  type="textarea" 
+                  ng-minlength='5'
+                  ng-maxlength='60'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.street_1.$touched">
+                    <p ng-show="userForm.street_1.$error.minlength">Address Line one is too short.</p>
+                    <p ng-show="userForm.street_1.$error.maxlength">Address Line one is too long.</p>
+                    <p ng-show="userForm.street_1.$error.required">Address Line one is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Address Line two:</label>
+              <div class="col-lg-8">
+                <input
+                  name="street_2" 
+                  ng-model="formData.street_2" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Address Line 2"
+                  type="textarea" 
+                  ng-minlength='5'
+                  ng-maxlength='60'
+                >
+                <div class="text-danger" ng-if="userForm.street_2.$touched">
+                    <p ng-show="userForm.street_2.$error.minlength">Address Line two is too short.</p>
+                    <p ng-show="userForm.street_2.$error.maxlength">Address Line two is too long.</p>
+                    <p ng-show="userForm.street_2.$error.required">Address Line two is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">City:</label>
+              <div class="col-lg-8">
+                <input
+                  name="city" 
+                  ng-model="formData.city" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="City" 
+                  type="text" 
+                  ng-minlength='3'
+                  ng-maxlength='25'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.city.$touched">
+                    <p ng-show="userForm.city.$error.minlength">City is too short.</p>
+                    <p ng-show="userForm.city.$error.maxlength">City is too long.</p>
+                    <p ng-show="userForm.city.$error.required">City is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">State:</label>
+              <div class="col-lg-8">
+                <input
+                  name="state" 
+                  ng-model="formData.state" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="State" 
+                  type="text" 
+                  ng-minlength='3'
+                  ng-maxlength='25'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.state.$touched">
+                    <p ng-show="userForm.state.$error.minlength">State is too short.</p>
+                    <p ng-show="userForm.state.$error.maxlength">State is too long.</p>
+                    <p ng-show="userForm.state.$error.required">State is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Postcode:</label>
+              <div class="col-lg-8">
+                <input
+                  name="postcode" 
+                  ng-model="formData.postcode" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Postcode" 
+                  type="number" 
+                  ng-minlength='5'
+                  ng-maxlength='8'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.postcode.$touched">
+                    <p ng-show="userForm.postcode.$error.minlength">Postcode is too short.</p>
+                    <p ng-show="userForm.postcode.$error.maxlength">Postcode is too long.</p>
+                    <p ng-show="userForm.postcode.$error.required">Postcode is required.</p>  
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Country:</label>
+              <div class="col-lg-8">
+                <input
+                  name="country" 
+                  ng-model="formData.country" 
+                  class="form-control" 
+                  value="" 
+                  placeholder="Country" 
+                  type="text" 
+                  ng-minlength='3'
+                  ng-maxlength='30'
+                  required
+                >
+                <div class="text-danger" ng-if="userForm.country.$touched">
+                    <p ng-show="userForm.country.$error.minlength">Country is too short.</p>
+                    <p ng-show="userForm.country.$error.maxlength">Country is too long.</p>
+                    <p ng-show="userForm.country.$error.required">Country is required.</p>  
+                </div>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <label class="col-lg-3 control-label">Time Zone:</label>
+              <div class="col-lg-8">
+                <div class="ui-select">
+                  <select id="user_time_zone" class="form-control">
+                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                    <option value="Alaska">(GMT-09:00) Alaska</option>
+                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                    <option value="Arizona">(GMT-07:00) Arizona</option>
+                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                  </select>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="form-group">
+              <label class="col-md-3 control-label">Username:</label>
+              <div class="col-md-8">
+                <input class="form-control" value="janeuser" type="text">
+              </div>
+            </div> -->
+            <!--   -->
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input class="btn btn-success" value="Save Changes" type="submit">
+                <a class="btn btn-danger"  ng-click="cancel('newuser');" ui-sref="main.users"><i class="fa fa-arrow-circle-left"></i> Cancel</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div><!-- /.box -->
+    </div>
+  </div>
+</section>

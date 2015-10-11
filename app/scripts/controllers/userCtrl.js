@@ -1,9 +1,9 @@
-angular.module('taskSheetApp').controller('userCtrl',function ($auth, $state, $http, $rootScope, $scope, $location) {
+angular.module('taskSheetApp').controller('userCtrl',function ($auth, $state, $http, $rootScope, $scope, $location, atomicNotifyService) {
     
     if(!$auth.isAuthenticated()){
             $state.go('login');
-        }else if($location.path()=='/dashboard/user/add'){
-            $state.go('dashboard.useradd');
+        }else if($location.path()=='/user/add'){
+            $state.go('main.adduser');
             $scope.formData={};
             $scope.sex = {
                 availableOptions: [
@@ -11,8 +11,6 @@ angular.module('taskSheetApp').controller('userCtrl',function ($auth, $state, $h
                   {id: '2', name: 'Female'},
                 ]
             };
-            //$scope.availableRoles = appdata.allroles;
-            //console.log($scope.availableRoles);
             $scope.formData.sex = {id:1};
             $scope.selectedrole = {id:1};
 
@@ -22,31 +20,27 @@ angular.module('taskSheetApp').controller('userCtrl',function ($auth, $state, $h
                 .success(function (data) {
                 $scope.rowCollection = data.users;
                 $scope.displayCollection = [].concat($scope.rowCollection);
-                console.log($scope.displayCollection);
             });
         }
 
     $scope.init = function() {
     }
-    
-    // add user functions
-    $scope.clearalert = function(key){
-        alertsManager.deleteAlert(key);
-    };
+    $scope.cancel = function(type) {
+        if(type=='newuser'){
+            atomicNotifyService.info('Add user has been cancelled!', 3000);
+        }
+    }
     // form submit
     $scope.submitForm = function(isValid) {
       if (isValid) {
-            console.log($scope.selectedrole);
-            console.log($scope.formData.role);
-            alertsManager.clearAlerts();
             $scope.loading = true ;
             userObject = $scope.formData;
             userObject.role = $scope.selectedrole.id;
             userObject.sex = $scope.formData.sex.id;
             $http.post(apibaseurl+'api/user',userObject)
                 .success(function (data) {
-                    alertsManager.addAlert(data.message, 'alert-success');
-                    $state.go('dashboard.useredit', {id: data.user.id});
+                    atomicNotifyService.success(data.message, 3000);
+                    $state.go('main.userview', {id: data.user.id});
                 });
         }
     };
@@ -57,8 +51,7 @@ angular.module('taskSheetApp').controller('userCtrl',function ($auth, $state, $h
         if(userId){
             $http.delete(apibaseurl+'api/user/'+userId)
             .success(function (data) {
-                alertsManager.addAlert(data.message, 'alert-success');
-                $state.go('dashboard.users');
+                $state.go('main.users');
             });
         }
     };

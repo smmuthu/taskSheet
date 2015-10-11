@@ -1,0 +1,696 @@
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      User Profile
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Examples</a></li>
+      <li class="active">User profile</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+      <div class="col-md-3">
+
+        <!-- Profile Image -->
+        <div class="box box-primary">
+          <div class="box-body box-profile">
+            <img class="profile-user-img img-responsive img-circle" src="images/user4-128x128.jpg" alt="User profile picture">
+            <h3 class="profile-username text-center">{{profileBoxData.firstname}} {{profileBoxData.lastname}}</h3>
+            <p class="text-muted text-center">{{profileBoxData.position}}</p>
+            <p class="text-muted text-center"><span class="label label-success">{{profileBoxData.role}}</span></p>
+
+            <ul class="list-group list-group-unbordered">
+              <li class="list-group-item">
+                <b>Team</b> <a class="pull-right">{{profileBoxData.team}}</a>
+              </li>
+              <li class="list-group-item">
+                <b>Projects</b> <a class="pull-right">{{profileBoxData.projects}}</a>
+              </li>
+              <li class="list-group-item">
+                <b>Tasks</b> <a class="pull-right">{{profileBoxData.tasks}}</a>
+              </li>
+              <li class="list-group-item">
+                <b>Earned</b> <a class="pull-right">{{profileBoxData.earned}}</a>
+              </li>
+            </ul>
+
+            <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+
+        <!-- About Me Box -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">About Me</h3>
+          </div><!-- /.box-header -->
+          <div class="box-body">
+            <strong><i class="fa fa-book margin-r-5"></i>  Education</strong>
+            <p class="text-muted">
+              {{aboutmeBoxData.education}}
+            </p>
+
+            <hr>
+
+            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+            <p class="text-muted">{{aboutmeBoxData.location}}</p>
+
+            <hr>
+
+            <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+            <p>
+              <span class="label label-danger">UI Design</span>
+              <span class="label label-success">Coding</span>
+              <span class="label label-info">Javascript</span>
+              <span class="label label-warning">PHP</span>
+              <span class="label label-primary">Node.js</span>
+            </p>
+
+            <hr>
+
+            <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+            <p>{{aboutmeBoxData.notes}}</p>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div><!-- /.col -->
+      <div class="col-md-9">
+      <div class="nav-tabs-custom">
+        <uib-tabset>
+          <uib-tab heading="Reports">
+              <!-- Post -->
+                <div class="post">
+                  <div class="user-block">
+                    <img class="img-circle img-bordered-sm" src="images/user1-128x128.jpg" alt="user image">
+                    <span class='username'>
+                      <a href="#">Jonathan Burke Jr.</a>
+                      <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                    </span>
+                    <span class='description'>Shared publicly - 7:30 PM today</span>
+                  </div><!-- /.user-block -->
+                  <p>
+                    Lorem ipsum represents a long-held tradition for designers,
+                    typographers and the like. Some people hate it and argue for
+                    its demise, but others ignore the hate as they create awesome
+                    tools to help create filler text for everyone from bacon lovers
+                    to Charlie Sheen fans.
+                  </p>
+                  <ul class="list-inline">
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a></li>
+                    <li class="pull-right"><a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments (5)</a></li>
+                  </ul>
+
+                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                </div><!-- /.post -->
+
+                <!-- Post -->
+                <div class="post clearfix">
+                  <div class='user-block'>
+                    <img class='img-circle img-bordered-sm' src='images/user7-128x128.jpg' alt='user image'>
+                    <span class='username'>
+                      <a href="#">Sarah Ross</a>
+                      <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                    </span>
+                    <span class='description'>Sent you a message - 3 days ago</span>
+                  </div><!-- /.user-block -->
+                  <p>
+                    Lorem ipsum represents a long-held tradition for designers,
+                    typographers and the like. Some people hate it and argue for
+                    its demise, but others ignore the hate as they create awesome
+                    tools to help create filler text for everyone from bacon lovers
+                    to Charlie Sheen fans.
+                  </p>
+
+                  <form class='form-horizontal'>
+                    <div class='form-group margin-bottom-none'>
+                      <div class='col-sm-9'>
+                        <input class="form-control input-sm" placeholder="Response">
+                      </div>                          
+                      <div class='col-sm-3'>
+                        <button class='btn btn-danger pull-right btn-block btn-sm'>Send</button>
+                      </div>                          
+                    </div>                        
+                  </form>
+                </div><!-- /.post -->
+
+                <!-- Post -->
+                <div class="post">
+                  <div class='user-block'>
+                    <img class='img-circle img-bordered-sm' src='images/user6-128x128.jpg' alt='user image'>
+                    <span class='username'>
+                      <a href="#">Adam Jones</a>
+                      <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                    </span>
+                    <span class='description'>Posted 5 photos - 5 days ago</span>
+                  </div><!-- /.user-block -->
+                  <div class='row margin-bottom'>
+                    <div class='col-sm-6'>
+                      <img class='img-responsive' src='images/photo1.png' alt='Photo'>
+                    </div><!-- /.col -->
+                    <div class='col-sm-6'>
+                      <div class='row'>
+                        <div class='col-sm-6'>
+                          <img class='img-responsive' src='images/photo2.png' alt='Photo'>
+                          <br>
+                          <img class='img-responsive' src='images/photo3.jpg' alt='Photo'>
+                        </div><!-- /.col -->
+                        <div class='col-sm-6'>
+                          <img class='img-responsive' src='images/photo4.jpg' alt='Photo'>
+                          <br>
+                          <img class='img-responsive' src='images/photo1.png' alt='Photo'>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+
+                  <ul class="list-inline">
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
+                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a></li>
+                    <li class="pull-right"><a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments (5)</a></li>
+                  </ul>
+
+                  <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                </div><!-- /.post -->
+          </uib-tab>
+          <uib-tab heading="Acivity">
+              <!-- The timeline -->
+                <ul class="timeline timeline-inverse">
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                    <span class="bg-red">
+                      10 Feb. 2014
+                    </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-envelope bg-blue"></i>
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                      <div class="timeline-body">
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                        weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                        jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                        quora plaxo ideeli hulu weebly balihoo...
+                      </div>
+                      <div class="timeline-footer">
+                        <a class="btn btn-primary btn-xs">Read more</a>
+                        <a class="btn btn-danger btn-xs">Delete</a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-aqua"></i>
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-comments bg-yellow"></i>
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
+                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div>
+                      <div class="timeline-footer">
+                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline time label -->
+                  <li class="time-label">
+                    <span class="bg-green">
+                      3 Jan. 2014
+                    </span>
+                  </li>
+                  <!-- /.timeline-label -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-camera bg-purple"></i>
+                    <div class="timeline-item">
+                      <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
+                      <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
+                      <div class="timeline-body">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                        <img src="http://placehold.it/150x100" alt="..." class="margin">
+                      </div>
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                  </li>
+                </ul>
+          </uib-tab>
+          <uib-tab heading="Personal Settings">
+              <form name="userForm"  class="form-horizontal" ng-submit="submitForm(userForm.$valid);">
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Firstname:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="firstname" 
+                        ng-model="formData.firstname" 
+                        ng-minlength="3" 
+                        ng-maxlength="15"
+                        class="form-control" 
+                        value="" 
+                        placeholder="Firstname" 
+                        type="text" 
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.firstname.$touched">
+                          <p ng-show="userForm.firstname.$error.minlength">Firstname is too short.</p>
+                          <p ng-show="userForm.firstname.$error.maxlength">Firstname is too long.</p>
+                          <p ng-show="userForm.firstname.$error.required">Your Firstname is required.</p>  
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Lastname:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="lastname" 
+                        ng-model="formData.lastname" 
+                        ng-minlength="1" 
+                        ng-maxlength="15"
+                        class="form-control" 
+                        value="" 
+                        placeholder="Lastname" 
+                        type="text" 
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.lastname.$touched">
+                          <p ng-show="userForm.lastname.$error.minlength">Lastname is too short.</p>
+                          <p ng-show="userForm.lastname.$error.maxlength">Lastname is too long.</p>
+                          <p ng-show="userForm.lastname.$error.required">Your Lastname is required.</p>  
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="email" 
+                        ng-model="formData.email" 
+                        data-wc-unique="{key: formData.id, property: 'email'}"
+                        class="form-control" 
+                        value="" 
+                        placeholder="Email" 
+                        type="email" 
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.email.$touched">
+                          <p ng-show="userForm.email.$error.email">Email is required.</p>  
+                          <p ng-show="userForm.email.$error.required">Email is required.</p> 
+                          <p ng-show="userForm.email.$dirty && userForm.email.$error.unique">Email already in use</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Sex:</label>
+                      <div class="col-lg-4">
+                        <select class="form-control" ng-model="formData.sex" ng-options="option.name for option in sex.availableOptions track by option.id"></select>
+
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Role:</label>
+                      <div class="col-lg-4">
+                        <roles selected-value='formData.role'/></roles>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Company:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="company" 
+                        ng-model="formData.company" 
+                        ng-minlength="3" 
+                        ng-maxlength="50"
+                        class="form-control" 
+                        value="" 
+                        placeholder="Company" 
+                        type="text" 
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.company.$touched">
+                          <p ng-show="userForm.company.$error.minlength">Company is too short.</p>
+                          <p ng-show="userForm.company.$error.maxlength">Company is too long.</p>
+                          <p ng-show="userForm.company.$error.required">Your Company is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Date of Birth:</label>
+                    <div class="col-lg-8">
+                    <p class="input-group">
+                      <!-- <input
+                        name="dob" 
+                        ng-model="formData.dob" 
+                        class="form-control" 
+                        value="" 
+                        datepicker-options="dateOptions"
+                        placeholder="yyyy-MM-dd" 
+                        type="text"
+                        datepicker-popup="yyyy-MM-dd"
+                        datepicker-append-to-body="true"
+                        required
+                        close-text="Close" 
+                      > -->
+                      <input 
+                        ng-model="formData.dob" 
+                        type="text" 
+                        id="dob" 
+                        name="dob"
+                        class="form-control" 
+                        datepicker-options="dateOptions"
+                        datepicker-popup="yyyy-MM-dd" 
+                        datepicker-append-to-body="true"
+                        is-open="status.opened" 
+                        readonly="readonly" 
+                        ng-click="status.opened=true"
+                      >
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event);">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                      </span>
+                    </p>
+                      <div class="text-danger" ng-if="userForm.dob.$touched">
+                          <p ng-show="userForm.dob.$error.date">Date of Birth is not valid.</p>
+                          <p ng-show="userForm.dob.$error.required">Date of Birth is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Telephone:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="telephone" 
+                        ng-model="formData.telephone" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Telephone" 
+                        type="text" 
+                        ng-minlength='5'
+                        ng-maxlength='15'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.telephone.$touched">
+                          <p ng-show="userForm.telephone.$error.minlength">Telephone is too short.</p>
+                          <p ng-show="userForm.telephone.$error.maxlength">Telephone is too long.</p>
+                          <p ng-show="userForm.telephone.$error.required">Your Telephone is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Mobile:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="mobile" 
+                        ng-model="formData.mobile" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Mobile" 
+                        type="text"
+                        ng-minlength='5'
+                        ng-maxlength='15'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.mobile.$touched">
+                          <p ng-show="userForm.mobile.$error.minlength">Mobile is too short.</p>
+                          <p ng-show="userForm.mobile.$error.maxlength">Mobile is too long.</p>
+                          <p ng-show="userForm.mobile.$error.required">Your Mobile is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Address Line one:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="street_1" 
+                        ng-model="formData.street_1" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Address Line 1" 
+                        type="textarea" 
+                        ng-minlength='5'
+                        ng-maxlength='60'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.street_1.$touched">
+                          <p ng-show="userForm.street_1.$error.minlength">Address Line one is too short.</p>
+                          <p ng-show="userForm.street_1.$error.maxlength">Address Line one is too long.</p>
+                          <p ng-show="userForm.street_1.$error.required">Address Line one is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Address Line two:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="street_2" 
+                        ng-model="formData.street_2" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Address Line 2"
+                        type="textarea" 
+                        ng-minlength='5'
+                        ng-maxlength='60'
+                      >
+                      <div class="text-danger" ng-if="userForm.street_2.$touched">
+                          <p ng-show="userForm.street_2.$error.minlength">Address Line two is too short.</p>
+                          <p ng-show="userForm.street_2.$error.maxlength">Address Line two is too long.</p>
+                          <p ng-show="userForm.street_2.$error.required">Address Line two is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">City:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="city" 
+                        ng-model="formData.city" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="City" 
+                        type="text" 
+                        ng-minlength='3'
+                        ng-maxlength='25'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.city.$touched">
+                          <p ng-show="userForm.city.$error.minlength">City is too short.</p>
+                          <p ng-show="userForm.city.$error.maxlength">City is too long.</p>
+                          <p ng-show="userForm.city.$error.required">City is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">State:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="state" 
+                        ng-model="formData.state" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="State" 
+                        type="text" 
+                        ng-minlength='3'
+                        ng-maxlength='25'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.state.$touched">
+                          <p ng-show="userForm.state.$error.minlength">State is too short.</p>
+                          <p ng-show="userForm.state.$error.maxlength">State is too long.</p>
+                          <p ng-show="userForm.state.$error.required">State is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Postcode:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="postcode" 
+                        ng-model="formData.postcode" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Postcode" 
+                        type="number" 
+                        ng-minlength='5'
+                        ng-maxlength='8'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.state.$touched">
+                          <p ng-show="userForm.postcode.$error.minlength">Postcode is too short.</p>
+                          <p ng-show="userForm.postcode.$error.maxlength">Postcode is too long.</p>
+                          <p ng-show="userForm.postcode.$error.required">Postcode is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Country:</label>
+                    <div class="col-lg-8">
+                      <input
+                        name="country" 
+                        ng-model="formData.country" 
+                        class="form-control" 
+                        value="" 
+                        placeholder="Country" 
+                        type="text" 
+                        ng-minlength='3'
+                        ng-maxlength='30'
+                        required
+                      >
+                      <div class="text-danger" ng-if="userForm.country.$touched">
+                          <p ng-show="userForm.country.$error.minlength">Country is too short.</p>
+                          <p ng-show="userForm.country.$error.maxlength">Country is too long.</p>
+                          <p ng-show="userForm.country.$error.required">Country is required.</p>  
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="form-group">
+                    <label class="col-lg-3 control-label">Time Zone:</label>
+                    <div class="col-lg-8">
+                      <div class="ui-select">
+                        <select id="user_time_zone" class="form-control">
+                          <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                          <option value="Alaska">(GMT-09:00) Alaska</option>
+                          <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                          <option value="Arizona">(GMT-07:00) Arizona</option>
+                          <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                          <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                          <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                          <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="form-group">
+                    <label class="col-md-3 control-label">Username:</label>
+                    <div class="col-md-8">
+                      <input class="form-control" value="janeuser" type="text">
+                    </div>
+                  </div> -->
+                  <!--   -->
+                  <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                      <input class="btn btn-success" value="Save Changes" type="submit">
+                      <a class="btn btn-danger"  ng-click="cancel('edituser');" ui-sref="main.users"><i class="fa fa-arrow-circle-left"></i> Cancel</a>
+                      <a class="btn btn-danger"  ng-click="deleteUser(formData.id);"><i class="fa fa-trash-o"></i> Delete User</a>
+                    </div>
+                  </div>
+                </form>
+          </uib-tab>
+          <uib-tab heading="Profile Settings">
+            <form name="profileForm"  class="form-horizontal" ng-submit="submitProfileForm(profileForm.$valid);">
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Education:</label>
+                <div class="col-lg-8">
+                  <textarea
+                    name="education" 
+                    ng-model="profileFormData.education" 
+                    ng-minlength="20" 
+                    ng-maxlength="5000"
+                    class="form-control"  
+                    placeholder="Education Details"
+                    required
+                  ></textarea>
+                  <div class="text-danger" ng-if="profileForm.education.$touched">
+                      <p ng-show="profileForm.education.$error.minlength">Education Details is too short.</p>
+                      <p ng-show="profileForm.education.$error.maxlength">Education Details is too long.</p>
+                      <p ng-show="profileForm.education.$error.required">Education Details is required.</p>  
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Skills:</label>
+                <div class="col-lg-8">
+                  <textarea
+                    name="skills" 
+                    ng-model="profileFormData.skills" 
+                    ng-minlength="20" 
+                    ng-maxlength="5000"
+                    class="form-control" 
+                    placeholder="Write your skills with Comma seperated"
+                    required
+                  ></textarea>
+                  <div class="text-danger" ng-if="profileForm.skills.$touched">
+                      <p ng-show="profileForm.skills.$error.minlength">skills is too short.</p>
+                      <p ng-show="profileForm.skills.$error.maxlength">skills is too long.</p>
+                      <p ng-show="profileForm.skills.$error.required">skills is required.</p>  
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">About:</label>
+                <div class="col-lg-8">
+                  <textarea
+                    name="about_me" 
+                    ng-model="profileFormData.about_me" 
+                    ng-minlength="20" 
+                    ng-maxlength="5000"
+                    class="form-control" 
+                    placeholder="Brief description about you"
+                    required
+                  ></textarea>
+                  <div class="text-danger" ng-if="profileForm.about_me.$touched">
+                      <p ng-show="profileForm.about_me.$error.minlength">About is too short.</p>
+                      <p ng-show="profileForm.about_me.$error.maxlength">About is too long.</p>
+                      <p ng-show="profileForm.about_me.$error.required">About is required.</p>  
+                  </div>
+                  
+                </div>
+              </div>
+              <!--Upload avatar-->
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Avatar:</label>
+                <div class="col-lg-8">
+                  <input type="file" id="fileInput" />
+                  <div class="cropArea">
+                    <img-crop image="myImage" result-image="myCroppedImage" result-image-size="600" result-image-quality="1.0"></img-crop>
+                  </div>
+                  <div>Preview:</div>
+                    <div class="preview">
+                    <img ng-src="{{myCroppedImage}}" /></div>
+                </div>
+              </div>
+              <!--Upload avatar-->
+              <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                  <input class="btn btn-success" value="Save Changes" type="submit">
+                  <a class="btn btn-danger"  ng-click="cancel('edituser');"><i class="fa fa-arrow-circle-left"></i> Cancel</a>
+                </div>
+              </div>
+            </form>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+      <!-- /.nav-tabs-custom -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+
+  </section><!-- /.content -->
